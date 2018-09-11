@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1 Test it again!, this is the page with extention .jade
+    h2 Names of my family
+    ul
+      li juan
+      li.
+        Pedro has many things
+        but he wants more.
+      li Romero
+      br
+      h3 Inset your name:
+      // this is how to insert class and id form CSS
+      input(type='text').clase-name#anyid
+
+      - var condition = false
+      if condition
+        p Great job Alex!
+      else
+        p Keep Working!
+      - var anyArray = [ 1, 2, 3]
+
+        each value in anyArray
+         p= value
+    block content
