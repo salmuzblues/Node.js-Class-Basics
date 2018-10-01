@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="831b25da-38c1-484c-b3fb-530ba6217a82" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -223,17 +224,6 @@
               <item name="practiceNode1" type="b2602c69:ProjectViewProjectNode" />
               <item name="practiceNode1" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="practiceNode1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="practiceNode1" type="462c0819:PsiDirectoryNode" />
-              <item name="10-monk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="practiceNode1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="practiceNode1" type="462c0819:PsiDirectoryNode" />
-              <item name="10-monk" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -333,12 +323,12 @@
       <workItem from="1537905636893" duration="12582000" />
       <workItem from="1538156884156" duration="12768000" />
       <workItem from="1538349499138" duration="2052000" />
-      <workItem from="1538412701279" duration="4337000" />
+      <workItem from="1538412701279" duration="4667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71361000" />
+    <option name="totallyTimeSpent" value="71691000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
