@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
+var object_id = require('mongodb').ObjectID;
 //
 var assert = require('assert');// for testing values or variables
 var url = 'mongodb://localhost:27017/test'; // test is database that we have
@@ -57,8 +58,31 @@ router.post('/insert', function (req, res, next) {
     res.redirect('/')
 
 });
-router.post('/update', function () {
-
+router.post('/update', function (req, res, next) {
+    var item = {
+        title: req.body.title,
+        content: req.body.content,
+        author: req.body.author
+    };
+    // retrieve id
+    var id = req.body.id;
+    /* Working with Database  Mongodb  */
+    //Connection
+    MongoClient.connect(url,{useNewUrlParser: true}, function (err, client) {
+        assert.equal(null, err); // this is for checking if we have some errors
+        console.log("Successfully connected to server");
+        var db  = client.db('test');
+        // here we name user-data as a name of our collection.
+        // inside the method insertOne we will create a function to call back
+        // _id what data is and $set: item show all data which is specified.
+        db.collection('user-data').updateOne({"_id": object_id(id)},{$set: item}, function (err, result) {
+            assert.equal(null, err); // if we do not have errors.
+            console.log('Item updated');
+            client.close();
+        });
+    });
+    //redirect to home
+    res.redirect('/')
 });
 router.post('/delete', function () {
 
