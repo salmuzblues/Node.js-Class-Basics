@@ -84,7 +84,25 @@ router.post('/update', function (req, res, next) {
     //redirect to home
     res.redirect('/')
 });
-router.post('/delete', function () {
+router.post('/delete', function (req, res, next) {
 
+    // retrieve id
+    var id = req.body.id;
+    /* Working with Database  Mongodb  */
+    //Connection
+    MongoClient.connect(url,{useNewUrlParser: true}, function (err, client) {
+        assert.equal(null, err); // this is for checking if we have some errors
+        console.log("Successfully connected to server");
+        var db  = client.db('test');
+        // here we name user-data as a name of our collection.
+        // inside the method insertOne we will create a function to call back
+        // _id what data is and $set: item show all data which is specified.
+        db.collection('user-data').deleteOne({"_id": object_id(id)}, function (err, result) {
+            assert.equal(null, err); // if we do not have errors.
+            console.log('Item updated');
+            client.close();
+        });
+    });
+    //redirect to home
 });
 module.exports = router;
